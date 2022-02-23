@@ -1,8 +1,4 @@
-const get=(req,res)=>{
-    // console.log("request" ,req.query)
-    console.log("request" ,req.params)
-
-    const user=[
+const user=[
         {
 
             "id": 1,
@@ -356,19 +352,30 @@ const get=(req,res)=>{
     
     
     ]
-    if(req.params.category){
+
+
+    const getCategory=(req,res)=>{
+    console.log("request" ,req.params)
+
+     if(req.params.category){
         const newuser=user.filter(value=>value.category ===req.params.category)
         res.send(newuser)
-
-    }else if(req.params.id){
-        
-        const userdata=user.filter((value) => value.id === Number( req.params.id ))
-        res.send(userdata)
-
+    }else{
+            res.send(user);
+        }
     }
-    else{
+
+        
+    const getId=(req,res)=>{
+    console.log("request" ,req.params)
+
+      if(req.params.id){
+    const newuser=user.filter((value) => value.id === Number( req.params.id ))
+        res.send(newuser)
+    }else{
         res.send(user);
     }
-    
 }
-module.exports.informationGet=get
+    
+
+module.exports = {getCategory,getId}

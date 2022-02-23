@@ -8,10 +8,10 @@ const informationRouter = express.Router();
 informationRouter.route("/details")
     .get(informationController.informationGet);
 
-    informationRouter.route("/details/:category")
-    .get(informationController.informationGet);
+    // informationRouter.route("/details/:category")
+    // .get(informationController.informationGet); 
 
-informationRouter.route("/details/:category/:id")
+informationRouter.route("/details/category/:id")
     .get(informationController.informationGet);
 
 

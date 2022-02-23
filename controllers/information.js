@@ -1,5 +1,5 @@
 const get=(req,res)=>{
-    console.log("request" ,req.query)
+    // console.log("request" ,req.query)
     console.log("request" ,req.params)
 
     const user=[
@@ -357,12 +357,12 @@ const get=(req,res)=>{
     
     ]
     if(req.params.category){
-        const newuser=user.filter(value=>value.category===req.params.category)
+        const newuser=user.filter(value=>value.category ===req.params.category)
         res.send(newuser)
 
     }else if(req.params.id){
         
-        const userdata=user.filter((value) => value.id ===Number( req.params.id ))
+        const userdata=user.filter((value) => value.id === Number( req.params.id ))
         res.send(userdata)
 
     }

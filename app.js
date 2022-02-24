@@ -5,11 +5,11 @@ const router = require("./routing");
 
 const app = express();  
 
-const PORT = process.env.PORT || 8000;
+// const PORT = process.env.PORT || 8000;
 
 app.use(cors())
 app.use("/api/v1", router);
 
-app.listen(PORT, ()=>{
+app.listen(8000, ()=>{
     console.log("Application has started successfully");
 })

@@ -5,14 +5,17 @@ const informationController = require("../controllers/information")
 const informationRouter = express.Router();
 
 
-informationRouter.route("/details")
-.get(informationController.informationGet);
+informationRouter.route("/data")
+.get(informationController.getCategory);
 
-informationRouter.route("/details/:category")
-    .get(informationController.informationGet); 
+informationRouter.route("/blog/:id")
+.get(informationController.getId);
+
+informationRouter.route("/data/:category")
+    .get(informationController.getCategory); 
 
 
-// informationRouter.route("details/category/:id").get(informationController.informationGet);
+
 
 
 

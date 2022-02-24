@@ -1,6 +1,4 @@
-const get=(req,res)=>{
-    // console.log("query", req.query);
-    console.log("params",req.params);
+
 
 
 const user=[
@@ -358,53 +356,59 @@ const user=[
     
     ]
 
- if(req.params.category){
+//     const get=(req,res)=>{
+//         // console.log("query", req.query);
+//         console.log("params",req.params);
 
-    console.log(req.params.category)
+//  if(req.params.category){
 
-const newuser=user.filter((value)=>value.category===req.params.category)
-      res.send(newuser)
+//     console.log(req.params.category)
 
-}else if(req.params.id){
+// const newuser=user.filter((value)=>value.category===req.params.category)
+//       res.send(newuser)
+
+// }else if(req.params.id){
  
-const userData=user.filter((value)=>value.id== req.params.id )
-res.send(userData)
-}else{
+// const userData=user.filter((value)=>value.id==req.params.id )
+// res.send(userData)
+// }else{
 
-     res.send(user);
-    }
-}  
-
-module.exports.informationGet=get
-
-
-
-
-
-
-
-//     const getCategory=(req,res)=>{
-//     console.log("req" ,req.params)
-
-//      if(req.params.category){
-//         const newuser=user.filter(value=>value.category ===req.params.category)
-//         res.send(newuser)
-//     }else{
-//             res.send(user);
-//         }
+//      res.send(user);
 //     }
+// }  
+
+// module.exports.informationGet=get
+
+
+
+
+
+
+
+    const getCategory=(req,res)=>{
+    console.log("req" ,req.params)
+
+     if(req.params.category){
+        const newuser=user.filter(value=>value.category ===req.params.category)
+        res.send(newuser)
+    }else{
+            res.send(user);
+        }
+    }
 
         
-//     const getId=(req,res)=>{
-//     console.log("req" ,req.params)
+    const getId=(req,res)=>{
+    console.log("req" ,req.params)
+//    res.send(user)
+
 
 //       if(req.params.id){
-//     const newuser=user.filter((value) => value.id === Number( req.params.id ))
-//         res.send(newuser)
+    const newuser=user.filter((value) => value.id === Number( req.params.id) )
+        res.send(newuser)
 //     }else{
 //         res.send(user);
 //     }
-// }
+}
     
 
-// module.exports = {get,getCategory,getId}
+module.exports = {getCategory,getId}
